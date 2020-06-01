@@ -1176,6 +1176,7 @@
 		}
 
 		function playSound() {
+			context.resume().then(() => {
 			// if (voiceBuffer)
 			// {
 				if (context){
@@ -1250,7 +1251,7 @@
 		 //  	dest = context.createMediaStreamDestination();
 			// mediaRecorder = new MediaRecorder(dest.stream);
 			// downloading = false;
-		  	
+		  	});
 		  	
 		}
 
