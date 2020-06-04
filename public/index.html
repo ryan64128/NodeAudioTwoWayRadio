@@ -1593,6 +1593,13 @@
 		  	};
 		  	xhr.send();
 		}
+
+		function sendEmail(url){
+			var ajax = new XMLHttpRequest();
+			ajax.open('GET', url, true);
+			ajax.responseType = 'text/html';
+			ajax.send(null);
+		}
 </script>
 	
 </body>

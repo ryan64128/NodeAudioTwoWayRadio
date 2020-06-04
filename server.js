@@ -6,6 +6,26 @@ var port = process.env.PORT || 8010;
 
 var app = express()
 			.use(express.static(__dirname + '/public'))
+			.use('/mail', function(req, res, next){
+				var mailOptions = {
+					from: 'ryan64128@gmail.com',
+					to: req.query.to,
+					subject: 'Two-Way Radio File Download',
+					text: 'Thank for trying our app!',
+					attachments: [
+					{
+						filename: req.query.filename || 'helicopter.wav',
+						path: './public/' + req.query.filename || './public/helicopter.wav'
+					}]
+				};
+				transporter.sendMail(mailOptions, function(error, info){
+					if (error){
+						console.log(error);
+					} else {
+						console.log('File sent via email: ' + info.response);
+					}
+				});
+			})
 			.listen(port);
 
 // http.createServer(app).listen(8080);
@@ -19,17 +39,7 @@ var transporter = nodeMailer.createTransport({
 	}
 });
 
-var mailOptions = {
-	from: 'ryan64128@gmail.com',
-	to: 'fatima64128@yahoo.com',
-	subject: 'Sending e-mail using Node.js',
-	text: 'Hello World, nodemailer!'
-};
 
-transporter.sendMail(mailOptions, function(error, info){
-	if (error){
-		console.log(error);
-	} else {
-		console.log('Email sent: ' + info.response);
-	}
-});
+
+
+
