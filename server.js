@@ -29,7 +29,7 @@ var app = express()
 			.listen(port);
 
 // http.createServer(app).listen(8080);
-console.log("server.js running on port " + port);
+console.log("server.js is not running on port " + port);
 
 var transporter = nodeMailer.createTransport({
 	service: 'Gmail',
