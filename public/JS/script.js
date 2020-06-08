@@ -87,6 +87,17 @@ var imgNumber9 = document.getElementById("num9");
 crossFade = crossFadeSlider.value / 100;
 canPlay = true;
 
+window.addEventListener('touchstart', function(){
+	alert("touchstart event");
+	if (context){
+		var buffer = context.createBuffer(1,1,,22050);
+		var source = context.createBufferSource();
+		source.buffer = buffer;
+		source.connect(context.destination);
+		source.noteOn(0);
+	}
+}, false);
+
 function displayDigitSlider(number){
 	if (number === 1){
 		convertToImage(((slider1.value / 4000) * 100) - 1);
@@ -592,7 +603,6 @@ function applyCrossFade(){
 }
 
 function playSound() {
-	alert("attempting to play sound");
 	if (canPlay){
 		context.resume().then(() => {
 			if (context){
