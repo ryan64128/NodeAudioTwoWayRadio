@@ -396,6 +396,7 @@ function initializeData(){
 	source = context.createMediaElementSource(document.getElementById("voiceAudio"));
 	initFilters();
 	connectVoiceChain();
+
 }
 
 function loadSources(callback){
@@ -591,6 +592,7 @@ function applyCrossFade(){
 }
 
 function playSound() {
+	alert("attempting to play sound");
 	if (canPlay){
 		context.resume().then(() => {
 			if (context){
