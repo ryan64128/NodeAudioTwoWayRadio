@@ -90,7 +90,7 @@ canPlay = true;
 window.addEventListener('touchstart', function(){
 	alert("touchstart event");
 	if (context){
-		var buffer = context.createBuffer(1,1,,22050);
+		var buffer = context.createBuffer(1,1,22050);
 		var source = context.createBufferSource();
 		source.buffer = buffer;
 		source.connect(context.destination);
