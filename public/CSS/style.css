@@ -284,11 +284,11 @@ a{
 		position: absolute;
 		font-family: "Myriad Pro", Arial ;
 		color: white;
-		width: 85px;
+		width: 100%;
 		text-align: center;
-		font-size: 10pt;
+		font-size: 7pt;
 		font-weight: bold;
-		margin-left: 5%; 
+		margin-left: 2%; 
 		margin-right:0%;
 		top: 10px;
 		left: 0px;
@@ -330,7 +330,7 @@ a{
 	}
 
 	textarea{
-		width: 200px;
+		width: 75%;
 		padding: 27px 0;
 		font-family: sans-serif;
 		margin-left: -25%;
@@ -354,15 +354,47 @@ a{
 	}
 
 	img[class="slider-digit-two"]{
-	position: absolute;
-	top: 85.5%;
-	left: 18%;
-}
+		position: absolute;
+		top: 85.5%;
+		left: 12%;
+	}
 
-img[class="slider-digit-one"]{
-	position: absolute;
-	top: 85.5%;
-	left: 53%;
-}
+	img[class="slider-digit-one"]{
+		position: absolute;
+		top: 85.5%;
+		left: 53%;
+	}
+
+	button{
+		background-color: black;
+		border: none;
+		color: white;
+		width: 42%;
+		height: 77px;
+		margin-left: 4%;
+		margin-top: 4%;
+		font-family: arial;
+		cursor: pointer;
+		font-size: 10pt;
+	}
+
+	.input-file + label{
+		
+		width: 28%;
+		
+	}
+
+	input[type='range']::-webkit-slider-runnable-track{
+		-webkit-appearance: none;
+		border: none;
+		height: 45%;
+		width: 20px;
+		border-radius: 3px;
+		background: none;
+		margin-top: auto;
+		margin-bottom: auto;
+		justify-content: center;
+		
+	}
 
 }
